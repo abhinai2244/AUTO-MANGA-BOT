@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: auto-manga-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python Bot.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: API_ID
+        sync: false
+      - key: API_HASH
+        sync: false
+      - key: USER_ID
+        sync: false
+      - key: DB_URL
+        sync: false
+      - key: DB_NAME
+        value: rex_auto_manga1
+      - key: CHECK_INTERVAL
+        value: 300
+      - key: MAX_CHAPTERS
+        value: 5
+      - key: USE_DATABASE
+        value: "True"
+      - key: PYTHON_VERSION
+        value: 3.10.0
